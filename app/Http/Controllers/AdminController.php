@@ -16,8 +16,11 @@ class AdminController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $questions = $user->questions()->paginate(6);
-        return view('admin');
+        $allusers = [];
+        $allusers = User::all();
+
+        return view('admin')->with("allusers",$allusers);
+
     }
     /**
      * Show the form for creating a new resource.
