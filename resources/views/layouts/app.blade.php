@@ -34,6 +34,9 @@
                 <a class="navbar-brand" href="{{ route('home') }}">
                     Home
                 </a>
+                <a class="navbar-brand" href="{{ route('admin') }}">
+                    Admin
+                </a>
             @endguest
 
 
