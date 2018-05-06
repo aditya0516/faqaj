@@ -26,8 +26,22 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected function redirectPath()
+    //{
+      //  if (Auth::user()->isBan==0) {
+        //    return '/home';
+        //} else {
+          //  return '/test';
+     //   }
+   // }
+      protected $redirectTo = '/home';
 
+      protected function redirectTo(){
+          if (auth()->user()->isBan==0){
+              return'/home';
+          }
+          return '/test';
+      }
     /**
      * Create a new controller instance.
      *

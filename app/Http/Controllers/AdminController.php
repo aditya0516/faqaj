@@ -92,4 +92,11 @@ class AdminController extends Controller
        // DB::table('users')->where('id', $id)->delete();
             //return redirect('/');
     }
+    public function ban($isBan)
+    {
+        $user = User::find($isBan);
+        if($isBan == 0){
+            return('/home');
+        }
+    }
 }
