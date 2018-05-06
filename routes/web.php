@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin/destroy/{id}', 'AdminController@index')->name('admin.delete');
+Route::get('/test/{{id}}', 'AdminController@show')->name('test');
+
 
 Route::get('/user/{user_id}/profile', 'ProfileController@create')->name('profile.create');
 Route::get('/user/{user_id}/profile/{profile_id}', 'ProfileController@show')->name('profile.show');
@@ -38,7 +41,7 @@ Route::resources([
     'questions' => 'QuestionController',
 ]);
 
-
+Route::resources(['admins' => 'AdminController']);
 
 
 

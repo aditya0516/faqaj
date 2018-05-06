@@ -15,11 +15,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $allusers = [];
-        $allusers = User::all();
+        //$user = Auth::user();
+       // $allusers = [];
+        $user = User::all()->toArray();
 
-        return view('admin')->with("allusers",$allusers);
+        return view('admin',compact('user'));
 
     }
     /**
@@ -51,7 +51,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('test')->with('1',$id);
     }
 
     /**
@@ -85,6 +85,11 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('admin')->with('success', 'Data Deleted');
+        //$user=User::find($id);
+       // DB::table('users')->where('id', $id)->delete();
+            //return redirect('/');
     }
 }
