@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/test', 'AdminController@ban')->name('ban');
+//Route::get('/test', 'AdminController@ban')->name('ban');
 
 Route::get('/admin/destroy/{id}', 'AdminController@index')->name('admin.delete');
 //Route::get('/test/{{id}}', 'AdminController@show')->name('admin.ban');

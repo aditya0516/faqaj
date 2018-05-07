@@ -33,7 +33,7 @@
                             <tr>
                               <!--  <td>{{$value['id']}}</td>-->
                                 <td>{{$value['email']}}</td>
-                                <!--<td><a href=""><form method="post" action="{{action('BanController@update','$id')}}">
+                                <!--<td><a href=""><form method="post" action="">
                                 @csrf
                                             <input type="hidden" name="_method" value="PATCH"><button>Ban</button>
                                         </form>
