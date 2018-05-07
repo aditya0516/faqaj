@@ -1,7 +1,7 @@
 <?php
 
 namespace Tests\Unit;
-
+use App\Profile;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -22,4 +22,27 @@ class profileTest extends TestCase
         $profile->user()->associate($user);
         $this->assertTrue($profile->save());
     }
+    public function testInsertProfile()
+{
+    $profile = new Profile();
+    //$user->name = 'Mr. Walker Barton';
+    $profile->user_id = '80';
+    $profile->fname = 'Steve';
+    $profile->lname = 'Waugh';
+    $profile->body = 'Born in Beantown';
+    $profile->save();
+    $this->assertTrue($profile->save());
+}
+    public function testDeleteProfile()
+    {
+        $profile = new Profile();
+        //$user->name = 'Mr. Walker Barton';
+        $profile->user_id = '80';
+        $profile->fname = 'Mike';
+        $profile->lname = 'Lafferty';
+        $profile->body = 'Newark Resident';
+        $profile->save();
+        $this->assertTrue($profile->delete());
+    }
+
 }
