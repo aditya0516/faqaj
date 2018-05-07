@@ -80,8 +80,11 @@ http://agiledata.org/essays/tdd.html
 ## Free Alternative:
 https://code.visualstudio.com/
 
-## User Stories
+## User Stories:
 1. As an admin I will be able to view the admin page.
 2. As an admin I will be able to view the list of users.
 3. As an admin I will be able to delete the users from database.
 4. As an admin I can ban the users from the database so that banned users cannot login.
+
+## Epic Story:
+When an admin logs into the system, he obtains access to the admin panel where he can perfrom different actions related to the users like deleting users,user questions,etc.
