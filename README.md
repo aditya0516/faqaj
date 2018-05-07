@@ -80,7 +80,7 @@ http://agiledata.org/essays/tdd.html
 ## Free Alternative:
 https://code.visualstudio.com/
 
-##User Stories
+## User Stories
 1. As an admin I will be able to view the admin page.
 2. As an admin I will be able to view the list of users.
 3. As an admin I will be able to delete the users from database.
