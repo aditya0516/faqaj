@@ -19,7 +19,7 @@ class AdminController extends Controller
        // $allusers = [];
         $user = User::all()->toArray();
 
-        return view('admin',compact('user'));
+        return view('/admin',compact('user'));
 
     }
     /**
@@ -51,7 +51,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        return view('test')->with('1',$id);
+        return view('/test');
     }
 
     /**
@@ -95,8 +95,12 @@ class AdminController extends Controller
     public function ban($isBan)
     {
         $user = User::find($isBan);
-        if($isBan == 0){
-            return('/home');
-        }
+
+        return redirect()->route('admin.ban');
+        return view('/test');
+        //$user = User::find($isBan);
+        //if($isBan == 0){
+          //  return('/home');
+        //}
     }
 }

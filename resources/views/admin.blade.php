@@ -23,17 +23,21 @@
                     @endif
                     <table>
                         <tr>
-                            <td>Sr. No</td>
+
                             <td>Email</td>
-                            <td>Status</td>
+
                             <td>Delete</td>
 
                         </tr>
                         @foreach($user as $value)
                             <tr>
-                                <td>{{$value['id']}}</td>
+                              <!--  <td>{{$value['id']}}</td>-->
                                 <td>{{$value['email']}}</td>
-                                <td><a href=""><button>Block</button></a>
+                                <!--<td><a href=""><form method="post" action="{{action('BanController@update','$id')}}">
+                                @csrf
+                                            <input type="hidden" name="_method" value="PATCH"><button>Ban</button>
+                                        </form>
+-->
                                  <td><a href="">
                                         <form method="post" class=" delete_form" action="{{action('AdminController@destroy',$value['id'])}}">
                                           @csrf
@@ -63,5 +67,22 @@
                });
            });
        </script>
+        <script>
+            $(document).ready(function(){
+                $('.ban_form').on('submit', function(){
+                    int= b;
+                    b = confirm("Are you sure you want to ban it?");
+                    if(b=0)
+                    {
+
+                        return view('/test');
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                });
+            });
+        </script>
 
 @endsection

@@ -51,6 +51,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+public function isBanned($isBan){
+    $user = User::find($isBan);
+    if($user==0){
+        return redirect()->route('home');
+    }
 
+    return redirect()->route('admin.ban');
+}
 
 }

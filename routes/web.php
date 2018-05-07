@@ -18,9 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'LoginController@isBanned')->name('home');
+//Route::get('/admin', 'LoginController@isBanned')->name('admin.ban');
+
+
 Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/test', 'AdminController@ban')->name('ban');
+
 Route::get('/admin/destroy/{id}', 'AdminController@index')->name('admin.delete');
-Route::get('/test/{{id}}', 'AdminController@show')->name('test');
+//Route::get('/test/{{id}}', 'AdminController@show')->name('admin.ban');
 
 
 Route::get('/user/{user_id}/profile', 'ProfileController@create')->name('profile.create');
@@ -42,6 +48,8 @@ Route::resources([
 ]);
 
 Route::resources(['admins' => 'AdminController']);
+
+Route::resources(['banned' => 'BanController']);
 
 
 
